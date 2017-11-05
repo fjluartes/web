@@ -8,8 +8,9 @@ body {
 }
 
 .container img {
-    width: 730px;
-    height: 520px;
+    width: 500px;
+    height: 360px;
+    padding: 10px 10px 10px 10px;
 }
 
 img {
@@ -24,11 +25,15 @@ h2 em {
     color: blue;
 }
 
+h3 em {
+    color: blue;
+}
+
 li strong {
-    color: purple;
+    color: green;
 }
 
 li em {
-    color: brown;
+    color: purple;
 }
 
