@@ -1,0 +1,32 @@
+h1 {
+  font-family: Georgia, serif;
+  font-size: 80px;
+}
+
+.quote1 {
+  font-style: italic;
+  font-size: 25px;
+}
+
+.quote2 {
+  font-style: italic;
+  font-size: 20px;
+}
+
+.content {
+  padding: 30px 50px 30px 50px;
+  margin: 20px 50px 20px 50px;
+  border-radius: 15px;
+  background-color: #ebebe0;
+}
+
+.learn-more {
+  font-size: 25px;
+  font-style: bold;
+}
+
+.achievements {
+  font-family: Georgia;
+  font-size: 20px;
+  padding-left: 70px;
+}

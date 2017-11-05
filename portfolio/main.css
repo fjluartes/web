@@ -1,0 +1,17 @@
+body {
+    background-color: #d2b48c;
+    font-family: sans-serif;
+}
+
+p {
+    font-size: 20px;
+}
+
+strong {
+    color: green;
+}
+
+em {
+    color: blue;
+}
+
