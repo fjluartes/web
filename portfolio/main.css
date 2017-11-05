@@ -1,5 +1,5 @@
 body {
-    background-color: #cce6ff;
+    background-color: #ccffcc;
     margin-left: 20%;
     margin-right: 20%;
     border: 2px dotted black;
@@ -20,11 +20,15 @@ p {
     font-size: 20px;
 }
 
-strong {
-    color: green;
+h2 em {
+    color: blue;
 }
 
-em {
-    color: blue;
+li strong {
+    color: purple;
+}
+
+li em {
+    color: brown;
 }
 
