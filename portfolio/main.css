@@ -1,6 +1,19 @@
 body {
-    background-color: #d2b48c;
+    background-color: #cce6ff;
+    margin-left: 20%;
+    margin-right: 20%;
+    border: 2px dotted black;
+    padding: 10px 10px 10px 10px;
     font-family: sans-serif;
+}
+
+.container img {
+    width: 730px;
+    height: 520px;
+}
+
+img {
+    size: 40px;
 }
 
 p {
