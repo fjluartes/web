@@ -8,3 +8,6 @@ myImage.onclick = function () {
 	myImage.setAttribute('src', 'images/firefox-icon.png');
     }
 }
+
+var myButton = document.querySelector('button');
+var myHeading = document.querySelector('h1');
