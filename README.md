@@ -3,8 +3,6 @@ Web projects
 
 - FreeCodeCamp
 
-- Head First HTML/CSS
-
-- Head First HTML5
+- Mozilla Developer Network
 
 - Others
