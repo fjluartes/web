@@ -5,6 +5,10 @@ html, body {
   padding: 0;
 }
 
+html {
+    background-color: #00ffa3;
+}
+
 body {
   width: 70%;
   margin: 0 auto;
@@ -14,42 +18,42 @@ body {
 
 h1, h2, h3 {
   font-family: sans-serif;
-  color: #2a2a2a;
+  color: #0e0a16;
 }
 
 p, input, li {
   font-family: sans-serif;
-  color: #2a2a2a;
+  color: #0e0a16;
 }
 
 h1 {
-  font-size: 50px;
-  color: black;
+  font-size: 47px;
+  color: #0e0a16;
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 38px;
 }
 
 h3 {
-  font-size: 25px;
+  font-size: 30px;
 }
 
 p, li {
   font-size: 20px;
-  line-height: 30px;
+  line-height: 20px;
 }
 
 /* || header layout */
 
 nav, aside {
-  background-color: #ccffcc;
+  background-color: #0032ff;
   padding: 1%;
 }
 
 nav {
   height: 50px;
-  background-color: #ccffcc;
+  background-color: #0032ff;
   display: flex;
   margin-bottom: 10px;
 }
@@ -76,21 +80,22 @@ nav a {
 
 /* || main layout */
 
-article {
-  flex: 4;
+main {
+    padding: 5px 20px 2px 20px;
+    background-color: #ffffff;
+    flex: 4;
 }
 
 aside {
   flex: 1;
-  margin-left: 10px;
-  background-color: #ccffcc;
+  background-color: #ffcd00;
 }
 
 aside li {
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 footer {
   margin-top: 10px;
 }
-*/
+
