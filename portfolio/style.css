@@ -5,10 +5,6 @@ html, body {
   padding: 0;
 }
 
-html {
-    background-color: #00ffa3;
-}
-
 body {
   width: 70%;
   margin: 0 auto;
@@ -44,16 +40,20 @@ p, li {
   line-height: 20px;
 }
 
+aside h2, a {
+    color: #ffffff;
+}
+
 /* || header layout */
 
 nav, aside {
-  background-color: #0032ff;
+  background-color: #3366ff;
   padding: 1%;
 }
 
 nav {
   height: 50px;
-  background-color: #0032ff;
+  background-color: #3366ff;
   display: flex;
   margin-bottom: 10px;
 }
@@ -81,18 +81,16 @@ nav a {
 /* || main layout */
 
 main {
-    padding: 5px 20px 2px 20px;
-    background-color: #ffffff;
     flex: 4;
 }
 
 aside {
   flex: 1;
-  background-color: #ffcd00;
+  background-color: #0e0a16;
 }
 
 aside li {
-  padding-bottom: 5px;
+    padding: 5px 5px 5px 5px;
 }
 
 footer {
