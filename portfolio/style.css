@@ -23,37 +23,41 @@ p, input, li {
 }
 
 h1 {
-  font-size: 47px;
+  font-size: 46px;
   color: #0e0a16;
 }
 
 h2 {
-  font-size: 38px;
+  font-size: 32px;
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 24px;
 }
 
 p, li {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 20px;
 }
 
-aside h2, a {
+aside h2 {
+    color: #ffffff;
+}
+
+aside li {
     color: #ffffff;
 }
 
 /* || header layout */
 
 nav, aside {
-  background-color: #3366ff;
+  background-color: #0e0a16;
   padding: 1%;
 }
 
 nav {
   height: 50px;
-  background-color: #3366ff;
+  background-color: #0e0a16;
   display: flex;
   margin-bottom: 10px;
 }
@@ -75,7 +79,7 @@ nav a {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 /* || main layout */
