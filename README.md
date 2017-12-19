@@ -2,10 +2,11 @@
 ## Mozilla Development Network
 ### HTML
 - Intro - ok
-- multimedia
-- tables
-- forms
+- Multimedia
+- Tables
+- Forms
 ### CSS
-- Intro 
+- Intro
+
 ### JavaScript
--
+- Intro
