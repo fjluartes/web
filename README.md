@@ -1,8 +1,8 @@
-# Web
-Web projects
-
-- FreeCodeCamp
-
-- Mozilla Developer Network
-
-- Others
+# Web practice
+## Mozilla Development Network
+### HTML
+- 
+### CSS
+- 
+### JavaScript
+- 
