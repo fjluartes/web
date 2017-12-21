@@ -1,12 +1,10 @@
-# Web practice
-## Mozilla Development Network
-### HTML
-- Intro - ok
-- Multimedia
-- Tables
-- Forms
-### CSS
-- Intro
+# WEB DEVELOPMENT
+- MDN HTML Intro - ok
+- MDN CSS Tutorial - ongoing
+- HTTP
+- CGI (Python)
+- SQL
+- Javascript/jQuery
 
-### JavaScript
-- Intro
+# Source site
+http://courses.pgbovine.net/csc210/schedule.htm
