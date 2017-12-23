@@ -17,13 +17,13 @@ h1, h2, h3 {
   color: #0e0a16;
 }
 
-p, input, li {
+p, li {
   font-family: sans-serif;
   color: #0e0a16;
 }
 
-h1 {
-  font-size: 46px;
+header h1 {
+  font-size: 48px;
   color: #0e0a16;
 }
 
