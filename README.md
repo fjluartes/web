@@ -1,10 +1,13 @@
 # WEB DEVELOPMENT
-- MDN HTML Intro - ok
-- MDN CSS Tutorial - ongoing
+## PG Web Dev Stack
+- MDN HTML/CSS
 - HTTP
 - CGI (Python)
-- SQL
+- SQLite
+- HTTP cookies (login)
 - Javascript/jQuery
+- AJAX
 
 # Source site
 http://courses.pgbovine.net/csc210/schedule.htm
+
