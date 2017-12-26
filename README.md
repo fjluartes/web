@@ -1,6 +1,6 @@
 # WEB DEVELOPMENT
 ## PG Web Dev Stack
-- MDN HTML/CSS
+- HTML/CSS
 - HTTP
 - CGI (Python)
 - SQLite
@@ -10,4 +10,5 @@
 
 # Source site
 http://courses.pgbovine.net/csc210/schedule.htm
+http://www.pgbovine.net/web-programming-lectures.htm
 
