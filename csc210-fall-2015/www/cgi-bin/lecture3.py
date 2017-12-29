@@ -1,8 +1,8 @@
-#!/usr/bin/env python
+#!"C:\Python27\python.exe"
 
 # the above line is for Windows. For Mac OS, use the path to your Python,
 # which is usually:
-#!"C:\Python27\python.exe"
+#!/usr/bin/env python
 
 # Lecture 3 - CSC210 Fall 2015
 # Philip Guo
