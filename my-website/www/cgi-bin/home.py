@@ -19,10 +19,13 @@ print '''
   <body>
     <nav>
       <ul>
-        <li><a href="index.html">Fred's Site</a></li>
-        <li><a href="archives.html">Archives</a></li>
-        <li><a href="works.html">Works</a></li>
-      </ul>
+'''
+print ' <li><a href="/cgi-bin/home.py">Fred\'s Site</a></li>' 
+print ' <li><a href="../archives.html">Archives</a></li>'
+print ' <li><a href="../works.html">Works</a></li>'
+
+
+print ''' </ul>
 
       <form>
         <input type="search" name="q" placeholder="Search query">
@@ -32,7 +35,14 @@ print '''
 
     <main>
       <article>
-        <p>Blog post here</p>
+'''
+print open('../blog-posts/2017-09-15-updates.html').read() 
+print '<br>'
+print open('../blog-posts/2017-05-03-productivity.html').read() 
+print '<br>'
+print open('../blog-posts/2017-04-30-apps.html').read() 
+print '<br>'
+print '''
       </article>
 
       <aside>
