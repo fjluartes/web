@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<!--
+Lecture 3 - CSC 210 Fall 2015
+Philip Guo
+
+Form that calls cgi-bin/lecture3.py with a POST request
+
+-->
+  <head>
+    <title>My first form</title>
+  </head>
+
+  <body>
+    <h1>Please enter your info:</h1>
+
+    <form method="post" action="cgi-bin/lecture3.py">
+        <!-- <form method="get" action="cgi-bin/lecture3.py"> -->
+        <!-- get request places query string in URL -->
+      Name: <input name="my_name" type=text size="30"/>
+      <br>
+
+      Age: <input name="my_age" type=text size="10"/>
+      <br>
+
+      Image URL: <input name="my_image" type=text size="50"/>
+      <br>
+
+      <input type="submit"/> <input type="reset"/>
+    </form>
+  </body>
+</html>

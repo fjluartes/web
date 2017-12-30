@@ -14,70 +14,58 @@
 # useful for debugging
 import cgitb
 cgitb.enable()
-
 import datetime
-
 import cgi
 form = cgi.FieldStorage()
 
-
-# prints a minimal HTTP header
-print 'Content-Type: text/html'
-print
-
-# print the HTTP body, which is the HTML file representing lecture1.html
+print 'Content-type:text/html'
+print # don't forget the extra new line
+# extra blank line separates http header from body
 
 print '<html>'
-print '	<head>'
+print '''  <head>
+    <title>
+      My first webpage
+    </title>
 
-print '		<title>'
+    <style type="text/css">
+      h1 {
+        font-size: 100px;
+        font-family: arial;
+      }
 
-print '''
-			My first webpage
-		</title>
+      img {
+        width: 300px;
+      }
 
-		<style type="text/css">
-			h1 {
-				font-size: 100px;
-				font-family: arial;
-			}
-
-			img {
-				width: 300px;
-			}
-
-			p#myLine {
-				color: red;
-			}
-		</style>
-
-	</head>
-'''
-
-print '<body>'
-print '		<h1>My heading</h1>'
-
-print '		<h2>'
+      p#myLine {
+        color: red;
+      }
+    </style>
+  </head> '''
+print ''
+print '  <body>'
+print '    <h1>My heading</h1>'
+print ''
+print '    <h2>'
 print str(datetime.datetime.now())
-#print '			My sub-heading'
-print '		</h2>'
+#print '    My sub-heading'
+print '    </h2>'
+print ''
+print '    <h2>Your name is: ' + form['my_name'].value + '</h2>'
+print '    <h2>Your age is: ' + form['my_age'].value + '</h2>'
+print '    <img src="' + form['my_image'].value + '"/>'
+print ''
+print '    <p>Hello</p>'
+print ''
+print '    <h2>'
+print '      My other sub-heading'
+print '    </h2>'
+print ''
+print '    <p id="myLine">a new line</p>'
+print ''
+print '    <p>another one</p>'
+print ''
+print '  </body>'
+print '</html>'
 
-print '<h2>Your name is: ' + form['my_name'].value + '</h2>'
-
-print '<h2>Your age is: ' + form['my_age'].value + '</h2>'
-
-print '		<img src="' + form['my_image'].value + '"/>'
-
-print '''
-		<p>Hello</p>
-
-		<h2>
-			My other sub-heading
-		</h2>
-
-		<p id="myLine">a new line</p>
-
-		<p>another one</p>
-
-	</body>
-</html>'''
