@@ -12,7 +12,7 @@
 - HTML - ok
 - CSS - ok
 
-# Source site
+# References
 http://courses.pgbovine.net/csc210/schedule.htm
 http://www.pgbovine.net/web-programming-lectures.htm
 https://developer.mozilla.org/
