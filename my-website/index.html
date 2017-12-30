@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fred's Site</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- the below three lines are a fix to get HTML5 semantic elements working in old versions of Internet Explorer-->
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Fred's Site</a></li>
+        <li><a href="archives.html">Archives</a></li>
+        <li><a href="works.html">Works</a></li>
+      </ul>
+
+      <!-- A Search form is another commmon non-linear way to navigate through a website. -->
+
+      <form>
+        <input type="search" name="q" placeholder="Search query">
+        <input type="submit" value="Go!">
+      </form>
+    </nav>
+
+    <!-- Here is our page's main content -->
+    <main>
+
+      <!-- It contains an article -->
+      <article>
+        <h2>Unexpected Development</h2>
+
+        <p>So I started in a new project in my company. We're using ASP.NET MVC as the framework for an internal website for a foreign client. I didn't expect to learn ASP.NET or C# for that matter in my work, but I'm thankful for my bosses for allowing me, a beginner developer, to work on this project. I also like that this project is from scratch, so I can learn web programming with the stack from the ground up. Although, I think I would learn more if the deadline isn't too soon. The short timespan is forcing the team to make shortcuts and not follow all the processes and best practices to meet the deliverables.</p>
+
+        <p>Combined with one subject at school, I feel the information overload and the pressure. Now I know that I can't handle too much pressure and too tight of a deadline. But I have no choice but to adapt. I also wasted too much time on idle tweaking of my development environment, random internet stuff, and configuring my build to work. I am learning to cope with moving fast to deliver finished tasks on time, and fixing what is broken. I read in a blog post that people need to fix what is broken instead of complaining about it. And actions speak louder than complaining.</p>
+
+        <p>More actions, more results, less complaining. Note to self. </p>
+
+        <h3><a href="#">Older Posts</a></h3>
+      </article>
+
+      <!-- the aside content can also be nested within the main content -->
+      <aside>
+        <h2>About</h2>
+
+        <p>I'm Fred Luartes. I'm a developer, MS Computer Science student, and music enthusiast. </p>
+
+        <p>This website is for my personal projects, notes, and thoughts. </p>
+        
+        <h2>Archives</h2>
+        <ul>
+          <li><a href="#">December 2017</a></li>
+          <li><a href="#">November 2017</a></li>
+          <li><a href="#">September 2017</a></li>
+          <li><a href="#">November 2016</a></li>  
+          <li><a href="#">July 2016</a></li>
+        </ul>
+
+        <h2 id="title">Contact me:</h2>
+        <ul>
+          <li><a href="mailto:fjluartes@gmail.com" target="_blank">fjluartes@gmail.com</a></li>
+          <li><a href="https://twitter.com/fjluartes" target="_blank">Twitter</a></li>
+          <li><a href="https://github.com/fjluartes" target="_blank">Github</a></li>
+        </ul>
+      </aside>
+    </main>
+
+    <!-- And here is our main footer that is used across all the pages of our website -->
+
+    <footer>
+      <p>&copy;2017 Fred Luartes</p>
+    </footer>
+
+  </body>
+</html>
