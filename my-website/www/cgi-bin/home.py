@@ -1,4 +1,5 @@
 #!C:\Python27\python.exe
+# #!/usr/local/bin/python
 import cgitb
 cgitb.enable()
 import datetime
