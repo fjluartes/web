@@ -1,8 +1,7 @@
 #!C:\Python27\python.exe
-# #!/usr/local/bin/python
+# #!/usr/bin/env python
 import cgitb
 cgitb.enable()
-import datetime
 import cgi
 form = cgi.FieldStorage()
 
@@ -21,8 +20,8 @@ print '''
     <nav>
       <ul>
 '''
-print ' <li><a href="/cgi-bin/home.py">Fred\'s Site</a></li>' 
-print ' <li><a href="../archives.html">Archives</a></li>'
+print ' <li><a href="/">Fred\'s Site</a></li>' 
+print ' <li><a href="/cgi-bin/blog.py">Blog</a></li>'
 print ' <li><a href="../works.html">Works</a></li>'
 
 
