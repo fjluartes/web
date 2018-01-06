@@ -3,10 +3,14 @@
 - HTML/CSS - ok
 - HTTP web server - ok
 - CGI scripting - ok
-- SQL (SQLite)
-- HTTP cookies (login)
+- SQL (SQLite) - ok
+- HTTP cookies (login) - ok
 - Javascript/jQuery
 - AJAX
+- DOM storage
+- web services
+- web sockets
+- Node.js
 
 ## MDN
 - HTML - ok
