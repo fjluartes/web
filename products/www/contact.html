@@ -32,6 +32,7 @@
   </head>
 
   <body>
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -59,24 +60,23 @@
         <h1>ProductHub</h1>
         <p class="lead">All your store's products and inventories in one place.</p>
       </div>
-      <form class="form-signin" method="post" action="cgi-bin/homepage.py">
-        <h2 class="form-signin-heading">Sign in</h2>
-        <label for="my_email" class="sr-only">Username</label>
-        <input type="text" name="my_email" class="form-control" placeholder="Username" required autofocus>
-        <label for="my_pwd" class="sr-only">Password</label>
-        <input type="password" name="my_pwd" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
+      <form>
+      <h2>Contact us:</h2>
+        <div class="form-group">
+          <label for="my_name">Name:</label>
+          <input type="text" class="form-control" name="my_name" placeholder="Name">
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <div class="form-group">
+          <label for="my_email">Email:</label>
+          <input type="text" class="form-control" name="my_email" placeholder="Email address">
+        </div>
+        <div class="form-group">
+          <label for="my_message">Message:</label>
+          <textarea class="form-control" rows="5" name="my_message" placeholder="Message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
       </form>
-      
-      <div class="reg">
-        <p><a href="register.html">Register</a></p>
-      </div>
-      
+
     </div><!-- /.container -->
 
 
