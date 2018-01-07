@@ -32,12 +32,12 @@
   </head>
 
   <body>
-
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
@@ -47,6 +47,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="/">Login</a></li>
           </ul>
         </div><!--/.nav-collapse -->
 
@@ -59,12 +60,12 @@
         <h1>ProductHub</h1>
         <p class="lead">All your store's products and inventories in one place.</p>
       </div>
-      <form class="form-signin">
+      <form class="form-signin" method="post" action="cgi-bin/homepage.py">
         <h2 class="form-signin-heading">Sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <label for="my_email" class="sr-only">Username</label>
+        <input type="text" name="my_email" class="form-control" placeholder="Username" required autofocus>
+        <label for="my_pwd" class="sr-only">Password</label>
+        <input type="password" name="my_pwd" class="form-control" placeholder="Password" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
