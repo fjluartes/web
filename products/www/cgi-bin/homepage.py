@@ -87,27 +87,25 @@ if ('my_email' in form):
             </tr>
             </thead>
             <tbody>
-            <tr>
-            <td>iPhone X</td>
-            <td>$1,099.99</td>
-            <td>10</td>
-            </tr>
-            <tr>
-            <td>Samsung Note 8</td>
-            <td>$899.99</td>
-            <td>8</td>
-            </tr>
-            <tr>
-            <td>Macbook Pro 2016</td>
-            <td>$1,299.99</td>
-            <td>9</td>
-            </tr>
+            '''
+
+            for r in cur.execute('select * from products where email=?;', [email]):
+                print '<tr>'
+                print '<td>' + str(r[0]) +'</td>'
+                print '<td>$' + str(r[2]) +'</td>'
+                print '<td>' + str(r[3]) +'</td>'
+                print '</tr>'
+            
+            print '''
             </tbody>
             </table> 
+
+            <a href="../add-product.html" class="btn btn-primary" role="button">Add Product</a>
+
             </div>
             </div>
             '''
-
+        
     print '''
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script>window.jQuery || document.write(\'<script src="../assets/js/vendor/jquery.min.js"><\/script>\')</script>
@@ -189,26 +187,25 @@ else:
             </tr>
             </thead>
             <tbody>
-            <tr>
-            <td>iPhone X</td>
-            <td>$1,099.99</td>
-            <td>10</td>
-            </tr>
-            <tr>
-            <td>Samsung Note 8</td>
-            <td>$899.99</td>
-            <td>8</td>
-            </tr>
-            <tr>
-            <td>Macbook Pro 2016</td>
-            <td>$1,299.99</td>
-            <td>9</td>
-            </tr>
+            '''
+
+            for r in cur.execute('select * from products where email=?;', [email]):
+                print '<tr>'
+                print '<td>' + str(r[0]) +'</td>'
+                print '<td>$' + str(r[2]) +'</td>'
+                print '<td>' + str(r[3]) +'</td>'
+                print '</tr>'
+
+            print '''
             </tbody>
             </table> 
+
+            <a href="../add-product.html" class="btn btn-primary" role="button">Add Product</a>
+
             </div>
             </div>
                 '''
+            
     print '''
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script>window.jQuery || document.write(\'<script src="../assets/js/vendor/jquery.min.js"><\/script>\')</script>

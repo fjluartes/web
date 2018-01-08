@@ -7,13 +7,21 @@ import cgi
 
 import sqlite3
 conn = sqlite3.connect('product.db')
-c = conn.cursor()
+cur = conn.cursor()
+
+import Cookie
+import os
+
+stored_cookie_string = os.environ.get('HTTP_COOKIE')
+c = Cookie.SimpleCookie(stored_cookie_string)
+my_email = c['current_email'].value
 
 form = cgi.FieldStorage()
-my_email = form['my_email'].value
-my_pwd = form['my_pwd'].value
+my_name = form['my_name'].value
+my_price = form['my_price'].value
+my_qty = form['my_qty'].value
 
-c.execute('insert into users values(?, ?);', (my_email, my_pwd))
+cur.execute('insert into products values(?, ?, ?, ?);', (my_name, my_email, my_price, my_qty))
 conn.commit()
 conn.close()
 
@@ -56,15 +64,16 @@ print '''
 <div id="navbar" class="collapse navbar-collapse">
 <ul class="nav navbar-nav">
 <li class="active"><a href="#">Home</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="/">Login</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="/">Logout</a></li>
 </ul>
 </div>
 </div>
 </nav>
 <div class="container">
-<h2>Register</h2>
+<h2>Add Product</h2>
 <h3>Success!</h3>
+<p><a href="homepage.py">Back to Home</a></p>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')</script>

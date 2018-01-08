@@ -6,7 +6,7 @@ conn = sqlite3.connect('product.db')
 c = conn.cursor()
 
 c.execute('create table users(email varchar(100) primary key, password varchar(100));')
-c.execute('create table products(name varchar(100) primary key, price integer, quantity integer)')
+c.execute('create table products(name varchar(100) primary key, email varchar(100), price integer, quantity integer)')
 
 conn.commit()
 conn.close()
