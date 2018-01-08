@@ -17,6 +17,6 @@
 - CSS - ok
 
 # References
-http://courses.pgbovine.net/csc210/schedule.htm
-http://www.pgbovine.net/web-programming-lectures.htm
-https://developer.mozilla.org/
+- http://courses.pgbovine.net/csc210/schedule.htm
+- http://www.pgbovine.net/web-programming-lectures.htm
+- https://developer.mozilla.org/
