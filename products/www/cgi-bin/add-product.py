@@ -1,5 +1,6 @@
 #!C:\Python27\python.exe
 # #!/usr/bin/env python
+# add product
 import cgitb
 cgitb.enable()
 
@@ -17,11 +18,12 @@ c = Cookie.SimpleCookie(stored_cookie_string)
 my_email = c['current_email'].value
 
 form = cgi.FieldStorage()
+my_pid = form['my_pid'].value
 my_name = form['my_name'].value
 my_price = form['my_price'].value
 my_qty = form['my_qty'].value
 
-cur.execute('insert into products values(?, ?, ?, ?);', (my_name, my_email, my_price, my_qty))
+cur.execute('insert into products values(?, ?, ?, ?, ?);', (my_pid, my_name, my_email, my_price, my_qty))
 conn.commit()
 conn.close()
 
@@ -64,7 +66,7 @@ print '''
 <div id="navbar" class="collapse navbar-collapse">
 <ul class="nav navbar-nav">
 <li class="active"><a href="#">Home</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="contact.html">Contact</a></li>
 <li><a href="/">Logout</a></li>
 </ul>
 </div>

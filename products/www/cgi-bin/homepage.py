@@ -1,5 +1,6 @@
 #!C:\Python27\python.exe
 # #!/usr/bin/env python
+# homepage
 import cgi
 
 import cgitb
@@ -91,9 +92,9 @@ if ('my_email' in form):
 
             for r in cur.execute('select * from products where email=?;', [email]):
                 print '<tr>'
-                print '<td>' + str(r[0]) +'</td>'
-                print '<td>$' + str(r[2]) +'</td>'
-                print '<td>' + str(r[3]) +'</td>'
+                print '<td>' + str(r[1]) +'</td>'
+                print '<td>$' + str(r[3]) +'</td>'
+                print '<td>' + str(r[4]) +'</td>'
                 print '</tr>'
             
             print '''
@@ -191,9 +192,9 @@ else:
 
             for r in cur.execute('select * from products where email=?;', [email]):
                 print '<tr>'
-                print '<td>' + str(r[0]) +'</td>'
-                print '<td>$' + str(r[2]) +'</td>'
-                print '<td>' + str(r[3]) +'</td>'
+                print '<td>' + str(r[1]) +'</td>'
+                print '<td>$' + str(r[3]) +'</td>'
+                print '<td>' + str(r[4]) +'</td>'
                 print '</tr>'
 
             print '''

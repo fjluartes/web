@@ -1,5 +1,6 @@
 #!C:\Python27\python.exe
 # #!/usr/bin/env python
+# register
 import cgitb
 cgitb.enable()
 
@@ -10,10 +11,11 @@ conn = sqlite3.connect('product.db')
 c = conn.cursor()
 
 form = cgi.FieldStorage()
+my_uid = form['my_uid'].value
 my_email = form['my_email'].value
 my_pwd = form['my_pwd'].value
 
-c.execute('insert into users values(?, ?);', (my_email, my_pwd))
+c.execute('insert into users values(?, ?, ?);', (my_uid, my_email, my_pwd))
 conn.commit()
 conn.close()
 

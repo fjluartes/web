@@ -59,6 +59,10 @@
       <form method="post" action="cgi-bin/add-product.py">
       <h2>Add Product</h2>
         <div class="form-group">
+          <label for="my_pid">Product ID:</label>
+          <input type="text" class="form-control" name="my_pid">
+        </div>
+        <div class="form-group">
           <label for="my_name">Product Name:</label>
           <input type="text" class="form-control" name="my_name" placeholder="Name">
         </div>
@@ -70,7 +74,7 @@
           <label for="my_qty">Quantity:</label>
           <input type="text" class="form-control" name="my_qty" placeholder="Quantity">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 
     </div><!-- /.container -->
