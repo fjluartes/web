@@ -29,7 +29,7 @@ if ('my_email' in form):
     print c
     print ''
     print '''
-        <html lang="en">
+        <html>
         <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -82,9 +82,11 @@ if ('my_email' in form):
             <table class="table table-bordered table-striped">
             <thead>
             <tr>
+            <th>ID</th>
             <th>Product Name</th>
             <th>Price</th>
             <th>Quantity</th>
+            <th></th>
             </tr>
             </thead>
             <tbody>
@@ -92,29 +94,31 @@ if ('my_email' in form):
 
             for r in cur.execute('select * from products where email=?;', [email]):
                 print '<tr>'
+                print '<td>' + str(r[0]) +'</td>'
                 print '<td>' + str(r[1]) +'</td>'
                 print '<td>$' + str(r[3]) +'</td>'
                 print '<td>' + str(r[4]) +'</td>'
+                print '<td><a href="edit-product.py?my_pid=' + str(r[0]) + '" class="btn btn-primary">Edit</a> <a href"delete-confirm.py?my_pid=' + str(r[0]) + '" class="btn btn-default">Delete</a></td>'
                 print '</tr>'
             
             print '''
-            </tbody>
-            </table> 
+    </tbody>
+    </table> 
 
-            <a href="../add-product.html" class="btn btn-primary" role="button">Add Product</a>
+    <a href="../add-product.html" class="btn btn-primary" role="button">Add Product</a>
 
-            </div>
-            </div>
-            '''
+    </div>
+    </div>
+        '''
         
     print '''
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script>window.jQuery || document.write(\'<script src="../assets/js/vendor/jquery.min.js"><\/script>\')</script>
-        <script src="../dist/js/bootstrap.min.js"></script>
-        <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
-        </body>
-        </html>
-        '''
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write(\'<script src="../assets/js/vendor/jquery.min.js"><\/script>\')</script>
+    <script src="../dist/js/bootstrap.min.js"></script>
+    <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+    </html>
+    '''
 else:
     stored_cookie_string = os.environ.get('HTTP_COOKIE')
     
@@ -161,8 +165,6 @@ else:
         <div class="container">
         <div class="account">
         '''
-    #cur.execute('select email from users where email=?', [stored_cookie_string])
-    #cur.fetchone() is None
     if not stored_cookie_string:
         print '''
         <h2>Invalid user. Please login.</h2>
@@ -182,6 +184,7 @@ else:
             <table class="table table-bordered table-striped">
             <thead>
             <tr>
+            <th>ID</th>
             <th>Product Name</th>
             <th>Price</th>
             <th>Quantity</th>
@@ -192,26 +195,28 @@ else:
 
             for r in cur.execute('select * from products where email=?;', [email]):
                 print '<tr>'
+                print '<td>' + str(r[0]) +'</td>'
                 print '<td>' + str(r[1]) +'</td>'
                 print '<td>$' + str(r[3]) +'</td>'
                 print '<td>' + str(r[4]) +'</td>'
+                print '<td><a href="edit-product.py?my_pid=' + str(r[0]) + '" class="btn btn-primary">Edit</a> <a href="delete-confirm.py?my_pid=' + str(r[0]) + '" class="btn btn-default">Delete</a></td>'
                 print '</tr>'
 
             print '''
-            </tbody>
-            </table> 
+    </tbody>
+    </table> 
 
-            <a href="../add-product.html" class="btn btn-primary" role="button">Add Product</a>
+    <a href="../add-product.html" class="btn btn-primary" role="button">Add Product</a>
 
-            </div>
-            </div>
-                '''
+    </div>
+    </div>
+        '''
             
     print '''
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script>window.jQuery || document.write(\'<script src="../assets/js/vendor/jquery.min.js"><\/script>\')</script>
-        <script src="../dist/js/bootstrap.min.js"></script>
-        <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
-        </body>
-        </html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write(\'<script src="../assets/js/vendor/jquery.min.js"><\/script>\')</script>
+    <script src="../dist/js/bootstrap.min.js"></script>
+    <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+    </html>
     '''

@@ -10,10 +10,25 @@ import sqlite3
 conn = sqlite3.connect('product.db')
 cur = conn.cursor()
 
+import Cookie
+import os
+
+stored_cookie_string = os.environ.get('HTTP_COOKIE')
+c = Cookie.SimpleCookie(stored_cookie_string)
+email = c['current_email'].value
+
+form = cgi.FieldStorage()
+my_pid = form['my_pid'].value
+
+for r in cur.execute('select * from products where p_id=? and email=?;', [my_pid, email]):
+    my_name = str(r[1])
+    my_price = str(r[3])
+    my_qty = str(r[4])
+
 print 'Content-type: text/html'
 print ''
 print '''
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,14 +37,10 @@ print '''
     <meta name="author" content="">
 
     <title>ProductHub</title>
-
     <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
     <link href="../styles/template.css" rel="stylesheet">
     <link href="../styles/signin.css" rel="stylesheet">
-
     <script src="../assets/js/ie-emulation-modes-warning.js"></script>
   </head>
 
@@ -56,29 +67,37 @@ print '''
     </nav>
 
     <div class="container">
-      <form method="post" action="cgi-bin/add-product.py">
+    '''
+print '  <form method="post" action="edit-product-submit.py?my_pid=' + my_pid + '">'
+print '''      
       <h2>Edit Product</h2>
         <div class="form-group">
           <label for="my_pid">Product ID:</label>
-
-          <input type="text" class="form-control" name="my_pid" value="id">
+'''
+print '          <input type="text" class="form-control" name="my_pid" value="' + my_pid + '" disabled>'
+print '''
         </div>
         <div class="form-group">
           <label for="my_name">Product Name:</label>
+'''
 
-          <input type="text" class="form-control" name="my_name" value="Name">
+print '          <input type="text" class="form-control" name="my_name" value="' + my_name + '">'
+print '''
         </div>
         <div class="form-group">
           <label for="my_price">Price:</label>
-
-          <input type="text" class="form-control" name="my_price" value="Price">
+'''
+print '          <input type="text" class="form-control" name="my_price" value="' + my_price + '">'
+print '''
         </div>
         <div class="form-group">
           <label for="my_qty">Quantity:</label>
-
-          <input type="text" class="form-control" name="my_qty" value="Quantity">
+'''
+print '          <input type="text" class="form-control" name="my_qty" value="' + my_qty + '">'
+print '''
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="homepage.py" class="btn btn-default">Back</a>
       </form>
     </div>
 

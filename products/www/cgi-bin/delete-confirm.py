@@ -1,6 +1,6 @@
 #!C:\Python27\python.exe
 # #!/usr/bin/env python
-# view product
+# edit product
 import cgitb
 cgitb.enable()
 
@@ -10,11 +10,23 @@ import sqlite3
 conn = sqlite3.connect('product.db')
 cur = conn.cursor()
 
+import Cookie
+import os
+
+stored_cookie_string = os.environ.get('HTTP_COOKIE')
+c = Cookie.SimpleCookie(stored_cookie_string)
+email = c['current_email'].value
+
+form = cgi.FieldStorage()
+my_pid = form['my_pid'].value
+
+for r in cur.execute('select * from products where p_id=? and email=?;', [my_pid, email]):
+    my_name = str(r[1])
 
 print 'Content-type: text/html'
 print ''
 print '''
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,14 +35,10 @@ print '''
     <meta name="author" content="">
 
     <title>ProductHub</title>
-
     <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
     <link href="../styles/template.css" rel="stylesheet">
     <link href="../styles/signin.css" rel="stylesheet">
-
     <script src="../assets/js/ie-emulation-modes-warning.js"></script>
   </head>
 
@@ -53,36 +61,16 @@ print '''
             <li><a href="/">Logout</a></li>
           </ul>
         </div>
-
       </div>
     </nav>
 
     <div class="container">
-      <form method="post" action="cgi-bin/add-product.py">
-      <h2>Product Details</h2>
-        <div class="form-group">
-          <label for="my_pid">Product ID:</label>
-
-          <input type="text" class="form-control" name="my_pid" value="">
-        </div>
-        <div class="form-group">
-          <label for="my_name">Product Name:</label>
-
-          <input type="text" class="form-control" name="my_name" value="Name">
-        </div>
-        <div class="form-group">
-          <label for="my_price">Price:</label>
-
-          <input type="text" class="form-control" name="my_price" value="Price">
-        </div>
-        <div class="form-group">
-          <label for="my_qty">Quantity:</label>
-
-          <input type="text" class="form-control" name="my_qty" value="Quantity">
-        </div>
-        <button type="submit" class="btn btn-primary">Edit</button>
-        <button type="submit" class="btn btn-warning">Delete</button>
-      </form>
+    '''
+print '<h3>Delete this product:</h3>'
+print '<p>' + my_name + '</p>'
+print '<a href="delete-product.py?my_pid=' + my_pid + '" class="btn btn-primary">Yes</a>'
+print '''
+      <a href="homepage.py" class="btn btn-default">Back</a>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

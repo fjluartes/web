@@ -1,6 +1,6 @@
 #!C:\Python27\python.exe
 # #!/usr/bin/env python
-# add product
+# register
 import cgitb
 cgitb.enable()
 
@@ -12,18 +12,14 @@ cur = conn.cursor()
 
 import Cookie
 import os
-
 stored_cookie_string = os.environ.get('HTTP_COOKIE')
 c = Cookie.SimpleCookie(stored_cookie_string)
-my_email = c['current_email'].value
+email = c['current_email'].value
 
 form = cgi.FieldStorage()
 my_pid = form['my_pid'].value
-my_name = form['my_name'].value
-my_price = form['my_price'].value
-my_qty = form['my_qty'].value
 
-cur.execute('insert into products values(?, ?, ?, ?, ?);', (my_pid, my_name, my_email, my_price, my_qty))
+cur.execute('delete from products where p_id=? and email=?;', (my_pid, email))
 conn.commit()
 conn.close()
 
@@ -72,7 +68,7 @@ print '''
 </div>
 </nav>
 <div class="container">
-<h2>Add Product</h2>
+<h2>Delete Product</h2>
 <h3>Success!</h3>
 <p><a href="homepage.py">Back to Home</a></p>
 </div>

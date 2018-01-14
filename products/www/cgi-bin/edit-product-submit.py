@@ -1,6 +1,6 @@
 #!C:\Python27\python.exe
 # #!/usr/bin/env python
-# add product
+# edit product submit
 import cgitb
 cgitb.enable()
 
@@ -23,7 +23,7 @@ my_name = form['my_name'].value
 my_price = form['my_price'].value
 my_qty = form['my_qty'].value
 
-cur.execute('insert into products values(?, ?, ?, ?, ?);', (my_pid, my_name, my_email, my_price, my_qty))
+cur.execute("update products set name=?, price=?, quantity=? where p_id=? and email=?", (my_name, my_price, my_qty, my_pid, my_email))
 conn.commit()
 conn.close()
 
@@ -41,12 +41,9 @@ print '''
 <title>ProductHub</title>
 
 <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
-
 <link href="../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
 <link href="../styles/template.css" rel="stylesheet">
 <link href="../styles/signin.css" rel="stylesheet">
-
 <script src="../assets/js/ie-emulation-modes-warning.js"></script>
 </head>
 
@@ -72,7 +69,7 @@ print '''
 </div>
 </nav>
 <div class="container">
-<h2>Add Product</h2>
+<h2>Edit Product</h2>
 <h3>Success!</h3>
 <p><a href="homepage.py">Back to Home</a></p>
 </div>
